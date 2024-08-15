@@ -1,5 +1,8 @@
 package com.avengers.config;
 import com.avengers.config.convertors.StringToBrowserTypeConvertor;
+import com.avengers.config.enums.BrowserRemoteMode;
+import com.avengers.config.enums.BrowserType;
+import com.avengers.config.enums.RunMode;
 import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
@@ -15,5 +18,7 @@ import org.aeonbits.owner.Config;
 public interface FrameworkConfig extends Config {
     @DefaultValue("CHROME")
     @ConverterClass(StringToBrowserTypeConvertor.class)
-    String browser();
+    BrowserType browser();
+    RunMode runModeBrowser();
+    BrowserRemoteMode browserRemoteMode();
 }
